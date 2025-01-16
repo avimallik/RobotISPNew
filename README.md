@@ -28,3 +28,5 @@ Robot ISP is a cutting-edge Android automation system tailored for administrator
 2. Kotlin
 3. PHP procedural and PDO methodology for API development
 
+![scr (1)](https://github.com/user-attachments/assets/e3922dd6-cd39-4550-bd93-e1497d07e0a0)
+
