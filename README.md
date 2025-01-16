@@ -1,25 +1,24 @@
 <b>Description</b><br>
 Robot ISP is a cutting-edge Android automation system tailored for administrators and line managers within the Robot ISP ecosystem. This lightweight application streamlines critical operations, minimizing hassle with its intuitive single-click functionality for entering customer details. Designed to enhance efficiency, Robot ISP offers a suite of powerful features that simplify and optimize day-to-day tasks. The features are following <br><br>
 
-    <b>Real-Time Mikrotik Connectivity Monitoring</b></br>
+<b>Real-Time Mikrotik Connectivity Monitoring</b></br>
     Ensure seamless network management with live connectivity checks.
-    
-    One-Click Customer Entry</b></br>
+<b>One-Click Customer Entry</b></br>
     Streamline customer onboarding with a single-click entry process.
 
-    Comprehensive Customer Information View</b></br>
+<b>Comprehensive Customer Information View</b></br>
     Access detailed customer profiles effortlessly.
 
-    One-Click Internet Subscription Payments</b></br>
+<b>One-Click Internet Subscription Payments</b></br>
     Simplify billing with quick and efficient payment processing.
 
-    Instant Complaint Submission and Tracking</b></br>
+<b>Instant Complaint Submission and Tracking</b></br>
     Submit and review complaints instantly for swift resolution.
 
-    User-Friendly Expense Tracker</b></br>
+<b>User-Friendly Expense Tracker</b></br>
     Keep track of expenses with a simple and intuitive interface.
 
-    Addition of Account Heads and Subheads</b></br>
+<b>Addition of Account Heads and Subheads</b></br>
     Organize financial data efficiently with customizable account categories.
    <br><br>
    
