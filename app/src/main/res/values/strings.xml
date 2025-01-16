@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">RobotISPNew</string>
+
+    <string-array name="spinner_client_type">
+        <item>Optical Fiber</item>
+        <item>Cat 5</item>
+    </string-array>
+
+    <string-array name="spinner_connection_type">
+        <item>Home</item>
+        <item>Corporate</item>
+    </string-array>
+
+    <string-array name="spinner_status">
+        <item>Active</item>
+        <item>Inactive</item>
+        <item>Free</item>
+        <item>Discontinued</item>
+    </string-array>
+
+    <string-array name="spinner_gender">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="spinner_priority">
+        <item>High</item>
+        <item>Medium</item>
+        <item>Low</item>
+    </string-array>
+
+    <string-array name="spinner_complain_status">
+        <item>Select</item>
+        <item>Pending</item>
+        <item>Processing</item>
+        <item>Solved</item>
+    </string-array>
+
+</resources>

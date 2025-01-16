@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AgentEntry">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <!-- CollapsingToolbarLayout for collapsing content -->
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleMarginEnd="16dp"
+                app:expandedTitleMarginStart="16dp"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@android:color/transparent"
+                        app:layout_collapseMode="pin"
+                        app:popupTheme="@style/ThemeOverlay.Material3.Light">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="50">
+
+                                <TextView
+                                    android:id="@+id/toolbar_title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/abeezee"
+                                    android:text="Customer Entry"
+                                    android:textColor="@color/white"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"/>
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="50">
+
+                                <!-- Login image on the right -->
+                                <ImageView
+                                    android:id="@+id/clenAgentEntryInputBtn"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_weight="50"
+                                    android:contentDescription="Login"
+                                    android:padding="8dp"
+                                    app:srcCompat="@drawable/broom_clean_white_ico"
+                                    android:foreground="?attr/selectableItemBackground"/>
+
+                            </RelativeLayout>
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+                    </androidx.appcompat.widget.Toolbar>
+
+                </LinearLayout>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!-- NestedScrollView for content -->
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <!-- Content inside the NestedScrollView -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="10dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="right"
+                            android:id="@+id/mikrotikInfoContainer"
+                            android:layout_marginRight="4dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:fontFamily="@font/abeezee"
+                                android:gravity="right"
+                                android:text="Mikrotik Info"
+                                android:textSize="18dp"/>
+                            <TextView
+                                android:id="@+id/mikrotikIPTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="000.000.000.000"
+                                android:layout_marginLeft="3dp"
+                                android:gravity="right"
+                                android:layout_marginTop="5dp"
+                                android:textColor="@color/colorPrimary"/>
+                            <TextView
+                                android:id="@+id/mikrotikIDTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Mikrtotik ID"
+                                android:textSize="3sp"
+                                android:gravity="right"/>
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="right">
+
+                            <TextView
+                                android:id="@+id/mikrotikStatusTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/green_back"
+                                android:fontFamily="@font/abeezee"
+                                android:gravity="right"
+                                android:paddingLeft="15dp"
+                                android:paddingTop="5dp"
+                                android:paddingRight="15dp"
+                                android:paddingBottom="5dp"
+                                android:text=""
+                                android:textColor="@color/white"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/mikrotikStatusTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="mik-status"
+                                android:textSize="3sp"
+                                android:gravity="right"
+                                android:layout_marginRight="3dp"/>
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <EditText
+                            android:id="@+id/ipEdi"
+                            android:layout_marginTop="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="PPOE User*"
+                            android:textSize="16sp"
+                            android:height="50dp"
+                            android:background="@android:drawable/editbox_background_normal" />
+
+                        <EditText
+                            android:id="@+id/queuePasswordEdi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Mikrotik Secret Password*"
+                            android:textSize="16sp"
+                            android:layout_marginTop="8dp"
+                            android:height="50dp"
+                            android:background="@android:drawable/editbox_background_normal"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="10dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:fontFamily="@font/abeezee"
+                            android:gravity="right"
+                            android:text="Customer Personal Info"
+                            android:textSize="18dp" />
+
+                        <EditText
+                            android:id="@+id/ag_nameEdi"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Full Name*"
+                            android:textSize="16sp"
+                            android:height="50dp"
+                            android:background="@android:drawable/editbox_background_normal"/>
+
+                        <EditText
+                            android:id="@+id/ag_mobile_noEdi"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="8dp"
+                            android:height="50dp"
+                            android:background="@android:drawable/editbox_background_normal"
+                            android:hint="Mobile*"
+                            android:inputType="number|numberSigned"
+                            android:textSize="16sp" />
+
+                        <EditText
+                            android:id="@+id/regular_mobileEdi"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="8dp"
+                            android:height="50dp"
+                            android:background="@android:drawable/editbox_background_normal"
+                            android:hint="Others mobile"
+                            android:inputType="number|numberSigned"
+                            android:textSize="16sp" />
+
+                        <EditText
+                            android:id="@+id/ag_emailEdi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Email"
+                            android:textSize="16sp"
+                            android:layout_marginTop="8dp"
+                            android:height="50dp"
+                            android:background="@android:drawable/editbox_background_normal"/>
+
+                        <EditText
+                            android:id="@+id/ag_office_addressEdi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:height="50dp"
+                            android:background="@android:drawable/editbox_background_normal"
+                            android:hint="Address"
+                            android:inputType="text|textMultiLine"
+                            android:textSize="16sp" />
+
+                        <EditText
+                            android:id="@+id/national_idEdi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="NID/Passport"
+                            android:textSize="16sp"
+                            android:layout_marginTop="8dp"
+                            android:height="50dp"
+                            android:background="@android:drawable/editbox_background_normal"/>
+
+                        <EditText
+                            android:id="@+id/onumacEdi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Onu MAC Address"
+                            android:textSize="16sp"
+                            android:layout_marginTop="8dp"
+                            android:height="50dp"
+                            android:background="@android:drawable/editbox_background_normal"/>
+
+                        <EditText
+                            android:id="@+id/fibercodeEdi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Fiber Code/Id"
+                            android:textSize="16sp"
+                            android:layout_marginTop="8dp"
+                            android:height="50dp"
+                            android:background="@android:drawable/editbox_background_normal"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Gender"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="5dp"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="10"
+                            app:cardCornerRadius="10dp"
+                            android:layout_marginTop="5dp"
+                            android:elevation="10dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginBottom="5dp">
+                            <Spinner
+                                android:id="@+id/spinnerGender"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:padding="10dp"
+                                android:entries="@array/spinner_gender"/>
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Client Type*"
+                            android:textSize="16sp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="3dp"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="10"
+                            app:cardCornerRadius="10dp"
+                            android:layout_marginTop="5dp"
+                            android:elevation="10dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp">
+                            <Spinner
+                                android:id="@+id/spinnerClientType"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:padding="10dp"
+                                android:entries="@array/spinner_client_type"/>
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Connection Type*"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="5dp"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="10"
+                            app:cardCornerRadius="10dp"
+                            android:layout_marginTop="5dp"
+                            android:elevation="10dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginBottom="5dp">
+                            <Spinner
+                                android:id="@+id/spinnerConnectionType"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:padding="10dp"
+                                android:entries="@array/spinner_connection_type"/>
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Connection Date*"
+                            android:layout_marginLeft="3dp"/>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:elevation="10dp"
+                            app:cardCornerRadius="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="10dp">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center"
+                                android:padding="5dp">
+
+                                <TextView
+                                    android:id="@+id/datePickerText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="mm/dd/yyyy"
+                                    android:layout_weight="70"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textStyle="bold"
+                                    android:textSize="16sp"/>
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_weight="30"
+                                    android:src="@drawable/watch_ico"/>
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    android:elevation="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp">
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:fontFamily="@font/abeezee"
+                            android:gravity="right"
+                            android:text="Customer Billing Info"
+                            android:textSize="18dp" />
+                        <!--Package-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Package*"
+                                android:layout_marginLeft="5dp"
+                                android:paddingBottom="3dp"/>
+
+                            <TextView
+                                android:id="@+id/packageMbSelect"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Select"
+                                android:layout_weight="50"
+                                android:textSize="16sp"
+                                android:background="@drawable/textview_back"
+                                android:paddingLeft="15dp"
+                                android:paddingRight="15dp"
+                                android:paddingTop="8dp"
+                                android:paddingBottom="8dp"/>
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/takaEdi"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Monthly Bill Amount"
+                            android:textSize="16sp"
+                            android:layout_marginTop="8dp"
+                            android:inputType="number|numberSigned"
+                            android:height="50dp"
+                            android:background="@android:drawable/editbox_background_normal"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/textview_back"
+                            android:padding="5dp"
+                            android:layout_marginTop="5dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Effected From Current Month Bill"
+                                android:layout_marginLeft="3dp"
+                                android:textStyle="bold"
+                                android:textSize="15sp"/>
+
+                            <CheckBox
+                                android:id="@+id/effectedText"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="3dp"/>
+
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/runningpaidEdi"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Running Month Paid Amount"
+                            android:textSize="16sp"
+                            android:layout_marginTop="8dp"
+                            android:height="50dp"
+                            android:inputType="numberSigned"
+                            android:background="@android:drawable/editbox_background_normal"/>
+
+                        <EditText
+                            android:id="@+id/connect_chargeEdi"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Connection Fee Paid Amount"
+                            android:textSize="16sp"
+                            android:layout_marginTop="8dp"
+                            android:height="50dp"
+                            android:inputType="numberSigned"
+                            android:background="@android:drawable/editbox_background_normal"/>
+
+                        <EditText
+                            android:id="@+id/mikrotik_disconnectEdi"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Disconenct Day*"
+                            android:textSize="16sp"
+                            android:layout_marginTop="8dp"
+                            android:height="50dp"
+                            android:inputType="numberSigned"
+                            android:background="@android:drawable/editbox_background_normal"/>
+
+                        <!--zone-->
+                        <LinearLayout
+                            android:layout_marginTop="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Zone*"
+                                android:layout_marginLeft="5dp"
+                                android:paddingBottom="3dp"/>
+
+                            <TextView
+                                android:id="@+id/zoneSelect"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Select"
+                                android:layout_weight="50"
+                                android:textSize="16sp"
+                                android:background="@drawable/textview_back"
+                                android:paddingLeft="15dp"
+                                android:paddingRight="15dp"
+                                android:paddingTop="8dp"
+                                android:paddingBottom="8dp"/>
+
+                            <TextView
+                                android:id="@+id/zoneIDText"
+                                android:gravity="right"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="5sp"
+                                android:layout_weight="50"/>
+
+                            <TextView
+                                android:id="@+id/subZoneCountText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:text="0"
+                                android:textSize="5sp"
+                                android:layout_weight="50"/>
+
+                        </LinearLayout>
+                        <!--Subzone-->
+                        <LinearLayout
+                            android:id="@+id/subZoneContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_marginLeft="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Sub-Zone*"
+                                android:paddingBottom="3dp"/>
+
+                            <TextView
+                                android:id="@+id/subZoneSelect"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Select"
+                                android:layout_weight="50"
+                                android:textSize="16sp"
+                                android:background="@drawable/textview_back"
+                                android:paddingLeft="15dp"
+                                android:paddingRight="15dp"
+                                android:paddingTop="8dp"
+                                android:paddingBottom="8dp"/>
+
+                            <TextView
+                                android:id="@+id/subZoneIDText"
+                                android:gravity="right"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="50"
+                                android:textSize="5sp"/>
+
+                            <TextView
+                                android:id="@+id/areaCountText"
+                                android:gravity="right"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:layout_weight="50"
+                                android:textSize="5sp"/>
+
+                        </LinearLayout>
+                        <!--Area-->
+                        <LinearLayout
+                            android:id="@+id/areaContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_marginLeft="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Area/Destination"
+                                android:paddingBottom="3dp"/>
+
+                            <TextView
+                                android:id="@+id/areaSelect"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Select"
+                                android:layout_weight="50"
+                                android:textSize="16sp"
+                                android:background="@drawable/textview_back"
+                                android:paddingLeft="15dp"
+                                android:paddingRight="15dp"
+                                android:paddingTop="8dp"
+                                android:paddingBottom="8dp"/>
+
+                            <TextView
+                                android:id="@+id/areaIDText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="ID(Area)"
+                                android:text="0"
+                                android:textSize="5sp"
+                                android:gravity="right"
+                                android:layout_weight="50"/>
+
+                        </LinearLayout>
+                        <!--Billing Person-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Billing Person*"
+                                android:layout_marginLeft="5dp"
+                                android:paddingBottom="3dp"/>
+
+                            <TextView
+                                android:id="@+id/billingPersonSelect"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Select"
+                                android:layout_weight="50"
+                                android:textSize="16sp"
+                                android:background="@drawable/textview_back"
+                                android:paddingLeft="15dp"
+                                android:paddingRight="15dp"
+                                android:paddingTop="8dp"
+                                android:paddingBottom="8dp"/>
+
+                            <TextView
+                                android:id="@+id/billingPersonIdText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="ID(Area)"
+                                android:text="0"
+                                android:textSize="5sp"
+                                android:gravity="right"
+                                android:layout_weight="50"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Status*"
+                            android:layout_marginLeft="5dp"
+                            android:paddingBottom="3dp"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="10"
+                            app:cardCornerRadius="10dp"
+                            android:layout_marginTop="5dp"
+                            android:elevation="10dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginBottom="5dp">
+                            <Spinner
+                                android:id="@+id/spinnerStatus"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:padding="10dp"
+                                android:entries="@array/spinner_status"/>
+                        </androidx.cardview.widget.CardView>
+
+                        <EditText
+                            android:id="@+id/remarkEdi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@android:drawable/editbox_background_normal"
+                            android:focusable="true"
+                            android:fontFamily="@font/abeezee"
+                            android:gravity="top|start"
+                            android:hint="Remark"
+                            android:inputType="textMultiLine"
+                            android:minLines="3"
+                            android:scrollbars="vertical"
+                            android:scrollHorizontally="false"
+                            android:textSize="15sp"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="10dp">
+
+                            <CheckBox
+                                android:id="@+id/smsCheck"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="3dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:fontFamily="@font/abeezee"
+                                android:text="Customer SMS"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.cardview.widget.CardView>
+
+
+                <Button
+                    android:id="@+id/addCustomerBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add Customer"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"/>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
