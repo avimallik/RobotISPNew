@@ -3,21 +3,22 @@ Robot ISP is a cutting-edge Android automation system tailored for administrator
 
 <b>Real-Time Mikrotik Connectivity Monitoring</b></br>
     Ensure seamless network management with live connectivity checks.
+    <br>
 <b>One-Click Customer Entry</b></br>
     Streamline customer onboarding with a single-click entry process.
-
+</br>
 <b>Comprehensive Customer Information View</b></br>
     Access detailed customer profiles effortlessly.
-
+</br>
 <b>One-Click Internet Subscription Payments</b></br>
     Simplify billing with quick and efficient payment processing.
-
+</br>
 <b>Instant Complaint Submission and Tracking</b></br>
     Submit and review complaints instantly for swift resolution.
-
+</br>
 <b>User-Friendly Expense Tracker</b></br>
     Keep track of expenses with a simple and intuitive interface.
-
+</br>
 <b>Addition of Account Heads and Subheads</b></br>
     Organize financial data efficiently with customizable account categories.
    <br><br>
