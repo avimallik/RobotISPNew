@@ -1,2 +1,3 @@
-<font size=15>Description
-Robot ISP is a sophisticated Android automation system designed for administrators operating within the Robot ISP ecosystem.
+<b>Description</b> <br>
+Robot ISP is a cutting-edge Android automation system tailored for administrators and line managers within the Robot ISP ecosystem. This lightweight application streamlines critical operations, minimizing hassle with its intuitive single-click functionality for entering customer details. Designed to enhance efficiency, Robot ISP offers a suite of powerful features that simplify and optimize day-to-day tasks. The features are following <br>
+<b>Features</b> <br>
